@@ -17,6 +17,10 @@ Route::get('/registrarAlumno', 'alumnosController@registrar');
 Route::get("/ejemplo", "ejemploController@index
 	");
 
+Route::post('/guardarAlumno', 'alumnosController@guardar');
+
+Route::get('/consultarAlumnos', 'alumnosController@consultar');
+
 
 
 
