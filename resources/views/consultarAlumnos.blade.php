@@ -25,20 +25,33 @@
 						Masculino
 					@endif
 				</td>
-				<td>{{$a->carrera_id}}</td>
+				<td>{{$a->nom_carrera}}</td>
 				<td>
-					<button class="btn btn-primary btn-xs">
+					<a href="{{url('/editarAlumno')}}/{{$a->id}}" class="btn btn-primary btn-xs">
 						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-					</button>
-					<button class="btn btn-danger btn-xs">
+					</a>
+					<a href="{{url('/eliminarAlumno')}}/{{$a->id}}" class="btn btn-danger btn-xs">
 						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>	
-					</button>
+					</a>
 				</td>
 			</tr>
 		@endforeach
 	</thead>
 </table>
+<div class="text-center">
+	{{ $alumnos->links() }}
+</div>
+
 @stop
+
+
+
+
+
+
+
+
+
 
 
 
