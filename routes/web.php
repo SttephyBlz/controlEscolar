@@ -27,6 +27,8 @@ Route::get('/editarAlumno/{id}', 'alumnosController@editar');
 
 Route::post('/actualizarAlumno/{id}', 'alumnosController@actualizar');
 
+Route::get('/pdfAlumnos', 'alumnosController@pdf');
+
 
 
 
