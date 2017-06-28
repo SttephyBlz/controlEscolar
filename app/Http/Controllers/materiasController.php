@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Alumnos;
+use App\alumnos_grupos;
 
 class materiasController extends Controller
 {
@@ -34,7 +35,33 @@ class materiasController extends Controller
     	return view('cargarMaterias', compact('lista', 'materias', 'alumno'));
 
     }
+
+    public function cargarGrupo($id, Request $datos){
+        $alumnos_grupos=new alumnos_grupos();
+        $alumnos_grupos->alumno_id=$id;
+        $alumnos_grupos->grupo_id=$datos->input('grupo_id');
+        $alumnos_grupos->save();
+
+        return redirect('/cargarMaterias/'.$id);
+    }
+
+    public function bajaGrupo($id, $idg){
+        DB::table('alumnos_grupos')
+            ->where('alumnos_grupos.grupo_id', '=', $idg)
+            ->where('alumnos_grupos.alumno_id', '=', $id)
+            ->delete();
+
+            return redirect('/cargarMaterias/'.$id);
+    }
 }
+
+
+
+
+
+
+
+
 
 
 

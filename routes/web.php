@@ -31,6 +31,17 @@ Route::get('/pdfAlumnos', 'alumnosController@pdf');
 
 Route::get('/cargarMaterias/{id}', 'materiasController@cargar');
 
+Route::post('/cargarGrupo/{id}', 'materiasController@cargarGrupo');
+
+Route::get('/bajaGrupo/{id}/{idg}', 'materiasController@bajaGrupo');
+
+
+
+
+
+
+
+
 
 
 
