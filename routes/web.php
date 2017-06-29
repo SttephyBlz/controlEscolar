@@ -35,6 +35,9 @@ Route::post('/cargarGrupo/{id}', 'materiasController@cargarGrupo');
 
 Route::get('/bajaGrupo/{id}/{idg}', 'materiasController@bajaGrupo');
 
+Route::get('/capturarCalificaciones/{idg}', 'materiasController@capturarCalificaciones');
+
+Route::post('/guardarCalificaciones/{idg}', 'materiasController@guardarCalificaciones');
 
 
 
